@@ -12,66 +12,6 @@
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <title>GeoField Mobile - Field Geotechnical App</title>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script>
-    // Base64 of Royal Irrigation Department CAD Font (RID_TE.shx)
-    const RID_TE_SHX_B64 = "QXV0b0NBRC04NiBzaGFwZXMgMS4xDQoaAAACAboAAAA3AAEAAwAKAAYADQADACAABgAhAB8AIgAzACMAJwAkAEcAJQBHACYATwAnAB0AKAAhACkAIQAqAB8AKwAXACwAHAAtAA8ALgA4AC8ADwAwAE0AMQATADIAOQAzADcANAAZADUANQA2AEsANwAdADgAXwA5AEsAOgAnADsALAA8ABMAPQAXAD4AEwA/ADkAQABnAEEAGwBCAD8AQwAxAEQAJwBFAB0ARgAbAEcANQBIAB8ASQAPAEoAIQBLAB8ATAATAE0AFwBOABUATwA3AFAAIwBRAD8AUgArAFMANQBUABcAVQAhAFYAEwBXABcAWAAXAFkAGwBaABUAWwAVAFwADwBdABUAXgATAF8ADwBgAB4AYQAwAGIAMABjACgAZAAwAGUALgBmAB4AZwBAAGgAKABpAB4AagAmAGsAHgBsAA4AbQA2AG4AIgBvAC4AcAAwAHEAMAByACAAcwAwAHQAIAB1ACgAdgASAHcAFgB4ABYAeQAgAHoAFAB7ADcAfAAIAH0ANwB+ALAAoQAwAKIARACjADMApABGAKUAMwCmAFgApwAwAKgARACpAGgAqgBSAKsAUgCsAGYArQCMAK4AagCvAG4AsAB4ALEAUACyAGYAswB0ALQARgC1AFAAtgBQALcAPgC4ACoAuQBSALoANAC7ADQAvABAAL0AQAC+ADQAvwA0AMAATgDBAEQAwgBYAMMAQgDEAFAAxQBOAMYATgDHAEQAyABQAMkAbADKAFgAywBcAMwAUADNAEoAzgBYAM8AOADQAGYA0QA2ANIAJgDTAE4A1AAoANUAMgDWAFIA1wA4ANgALgDZADQA4AAuAOEAVgDiAEQA4wBoAOQANADlACcA5gBGAOcASADoABAA6QA4AOoAUgDrABoA7AAyAO4AJQDvACsA8AA+APEAWgDyAFwA8wBSAPQAVgD1AHwA9gBMAPcAZAD4AF4A+QBwAP4AHgD/ABYAAAEeAAEBHgACAQgAdGhhaV9lbmdsaXNoX2F1dG9jYWRmb250X2J5X1JpZDdfMTJfU2VwdGVtYmVyXzIwMDEAKBQAAAAFAAACCACIAAAGAAACCCgAACEAAggCKAEIAOUCCADzAQn+AgICAv7+/gAAAggOAAAiAAIIBC4BCf7+/gICAgL+APz+/P7+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";
-
-    function downloadRidTeShxFont() {
-      try {
-        const byteCharacters = atob(RID_TE_SHX_B64);
-        const byteNumbers = new Array(byteCharacters.length);
-        for (let i = 0; i < byteCharacters.length; i++) {
-          byteNumbers[i] = byteCharacters.charCodeAt(i);
-        }
-        const byteArray = new Uint8Array(byteNumbers);
-        const blob = new Blob([byteArray], { type: 'application/octet-stream' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'rid_te.shx';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-        showToast('ดาวน์โหลด RID_TE.shx เรียบร้อย! นำไปวางในโฟลเดอร์ Fonts ของ AutoCAD หรือ GstarCAD', '📐');
-      } catch (err) {
-        console.error('Download font failed:', err);
-        showToast('ไม่สามารถดาวน์โหลดไฟล์ฟอนต์ได้: ' + err.message, '⚠️');
-      }
-    }
-
-    document.getElementById('btn-download-rid-te-shx')?.addEventListener('click', downloadRidTeShxFont);
-
-    function getGeologPageConfig() {
-      const showEl = document.getElementById('export-geolog-page-show');
-      const prefixEl = document.getElementById('export-geolog-page-prefix');
-      const startEl = document.getElementById('export-geolog-page-start');
-      return {
-        show: showEl ? showEl.checked : true,
-        prefix: prefixEl ? prefixEl.value : 'ฉ-',
-        start: startEl ? (parseInt(startEl.value, 10) || 1) : 1
-      };
-    }
-
-    function syncPreviewPageConfigToExport() {
-      const pShow = document.getElementById('preview-geolog-page-show');
-      const pPrefix = document.getElementById('preview-geolog-page-prefix');
-      const pStart = document.getElementById('preview-geolog-page-start');
-
-      const eShow = document.getElementById('export-geolog-page-show');
-      const ePrefix = document.getElementById('export-geolog-page-prefix');
-      const eStart = document.getElementById('export-geolog-page-start');
-
-      if (eShow && pShow) eShow.checked = pShow.checked;
-      if (ePrefix && pPrefix) ePrefix.value = pPrefix.value;
-      if (eStart && pStart) eStart.value = pStart.value;
-    }
-
-
-    document.getElementById("preview-geolog-page-show")?.addEventListener("change", (e) => { syncPreviewPageConfigToExport(); refreshGeologModalPreview(); });
-    document.getElementById("preview-geolog-page-prefix")?.addEventListener("input", (e) => { syncPreviewPageConfigToExport(); refreshGeologModalPreview(); });
-    document.getElementById("preview-geolog-page-start")?.addEventListener("input", (e) => { syncPreviewPageConfigToExport(); refreshGeologModalPreview(); });
-  </script>
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Sarabun', sans-serif; }
@@ -132,6 +72,16 @@
           </div>
         </div>
 
+        <!-- Auth Mode Tabs (เข้าสู่ระบบ / สมัครสมาชิก) -->
+        <div class="grid grid-cols-2 gap-1.5 p-1 bg-slate-200/80 rounded-xl">
+          <button type="button" id="tab-auth-login" class="py-2 text-xs font-bold rounded-lg bg-white text-[#1F497D] shadow-sm transition">
+            เข้าสู่ระบบ
+          </button>
+          <button type="button" id="tab-auth-register" class="py-2 text-xs font-bold rounded-lg text-slate-600 hover:text-slate-800 transition">
+            สมัครสมาชิก
+          </button>
+        </div>
+
         <!-- In-page Alert / Notification Box -->
         <div id="login-alert" class="hidden p-3 rounded-xl text-xs flex items-start space-x-2 border transition-all">
           <span id="login-alert-icon" class="text-base leading-none">⚠️</span>
@@ -140,10 +90,10 @@
 
         <!-- Login Form -->
         <form id="form-login" class="space-y-4">
-          <!-- Username Input -->
+          <!-- Email Input -->
           <div>
             <label for="input-username" class="block text-xs font-bold text-slate-700 mb-1.5 flex items-center justify-between">
-              <span>อีเมล Google หรือชื่อผู้ใช้งาน</span>
+              <span>อีเมลผู้ใช้งาน (Email)</span>
               <span class="text-[10px] text-amber-600 font-normal">Admin: kasoonlogun@gmail.com</span>
             </label>
             <div class="relative">
@@ -152,9 +102,9 @@
               </span>
               <input 
                 id="input-username" 
-                type="text" 
+                type="email" 
                 value="" 
-                placeholder="ระบุอีเมล Google (เช่น name@gmail.com)" 
+                placeholder="ระบุอีเมลที่สมัครไว้ (เช่น name@gmail.com)" 
                 class="w-full pl-9 pr-3 py-2.5 text-sm font-semibold bg-white border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1F497D] focus:border-transparent transition text-slate-800"
                 required
               />
@@ -165,7 +115,7 @@
           <div>
             <label for="input-password" class="block text-xs font-bold text-slate-700 mb-1.5 flex items-center justify-between">
               <span>รหัสผ่าน (Password)</span>
-              <span class="text-[10px] text-slate-400 font-normal">สำหรับล็อกอินทั่วไป</span>
+              <span class="text-[10px] text-slate-400 font-normal">ตรวจรหัสผ่านจากเครื่อง</span>
             </label>
             <div class="relative">
               <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
@@ -175,7 +125,7 @@
                 id="input-password" 
                 type="password" 
                 value="" 
-                placeholder="ระบุรหัสผ่าน" 
+                placeholder="ระบุรหัสผ่านของท่าน" 
                 class="w-full pl-9 pr-10 py-2.5 text-sm font-semibold bg-white border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1F497D] focus:border-transparent transition text-slate-800"
                 required
               />
@@ -209,6 +159,106 @@
             <span>เข้าสู่ระบบ (Login)</span>
             <span>➔</span>
           </button>
+
+          <p class="text-[11px] text-center text-slate-500">
+            ยังไม่มีบัญชีในเครื่องนี้?
+            <button type="button" id="btn-switch-to-register" class="text-[#1F497D] font-bold hover:underline ml-1">
+              สมัครสมาชิกเลย
+            </button>
+          </p>
+        </form>
+
+        <!-- Register Form (Offline LocalStorage) -->
+        <form id="form-register" class="space-y-3.5 hidden">
+          <div>
+            <label for="reg-fullname" class="block text-xs font-bold text-slate-700 mb-1">
+              ชื่อ-นามสกุล หรือชื่อผู้ใช้งาน
+            </label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">🪪</span>
+              <input
+                id="reg-fullname"
+                type="text"
+                placeholder="เช่น นายช่างธรณี ภาคสนาม"
+                class="w-full pl-9 pr-3 py-2.5 text-sm font-semibold bg-white border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1F497D] focus:border-transparent transition text-slate-800"
+                required
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="reg-email" class="block text-xs font-bold text-slate-700 mb-1 flex items-center justify-between">
+              <span>อีเมลสำหรับเข้าสู่ระบบ</span>
+              <span class="text-[10px] text-slate-400 font-normal">บันทึกในเครื่อง (Offline)</span>
+            </label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">✉️</span>
+              <input
+                id="reg-email"
+                type="email"
+                placeholder="เช่น name@gmail.com"
+                class="w-full pl-9 pr-3 py-2.5 text-sm font-semibold bg-white border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1F497D] focus:border-transparent transition text-slate-800"
+                required
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="reg-password" class="block text-xs font-bold text-slate-700 mb-1">
+              กำหนดรหัสผ่าน (อย่างน้อย 4 ตัวอักษร)
+            </label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">🔒</span>
+              <input
+                id="reg-password"
+                type="password"
+                minlength="4"
+                placeholder="กำหนดรหัสผ่าน"
+                class="w-full pl-9 pr-10 py-2.5 text-sm font-semibold bg-white border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1F497D] focus:border-transparent transition text-slate-800"
+                required
+              />
+              <button
+                type="button"
+                id="btn-toggle-reg-password"
+                class="absolute inset-y-0 right-0 pr-3 flex items-center text-xs text-slate-400 hover:text-slate-600 focus:outline-none"
+              >
+                👁️
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <label for="reg-password-confirm" class="block text-xs font-bold text-slate-700 mb-1">
+              ยืนยันรหัสผ่านอีกครั้ง
+            </label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">✅</span>
+              <input
+                id="reg-password-confirm"
+                type="password"
+                minlength="4"
+                placeholder="พิมพ์รหัสผ่านเดิมอีกครั้ง"
+                class="w-full pl-9 pr-3 py-2.5 text-sm font-semibold bg-white border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1F497D] focus:border-transparent transition text-slate-800"
+                required
+              />
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            id="btn-submit-register"
+            class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 active:scale-[0.99] text-white font-bold text-sm rounded-xl shadow-md transition flex items-center justify-center space-x-2"
+          >
+            <span>สมัครสมาชิกและเข้าสู่ระบบ</span>
+            <span>✓</span>
+          </button>
+
+          <p class="text-[11px] text-center text-slate-500">
+            มีบัญชีอยู่แล้ว?
+            <button type="button" id="btn-switch-to-login" class="text-[#1F497D] font-bold hover:underline ml-1">
+              กลับไปเข้าสู่ระบบ
+            </button>
+          </p>
         </form>
 
         <!-- Divider with Social Login Setup -->
@@ -236,12 +286,12 @@
               </svg>
               <span>Sign in with Google (Gmail)</span>
             </div>
-            <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded-full group-hover:bg-amber-200 transition">
-              เร็วๆ นี้
+            <span id="btn-google-login-badge" class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded-full group-hover:bg-emerald-200 transition">
+              พร้อมใช้งาน
             </span>
           </button>
           <p class="text-[10px] text-center text-slate-400">
-            สถาปัตยกรรมรองรับ Google OAuth2 / Gmail พร้อมเชื่อมต่อในอนาคต
+            เข้าสู่ระบบด้วยบัญชี Google (Gmail) เพื่อแยกสิทธิ์และข้อมูลโครงการอัตโนมัติ
           </p>
         </div>
       </div>
@@ -267,6 +317,7 @@
             <div>
               <h2 class="text-base font-black tracking-tight leading-none">GeoField Mobile</h2>
               <p class="text-[11px] text-slate-200 mt-0.5">เมนูหลัก (Main Menu)</p>
+              <p id="menu-active-user-badge" class="text-[10px] text-amber-200 font-semibold mt-0.5 truncate max-w-[160px] hidden"></p>
             </div>
           </div>
           <div class="flex items-center space-x-1.5">
@@ -2762,6 +2813,13 @@
           <p class="text-[11px] text-slate-500 mt-1">
             เลือกหรือระบุอีเมล Google ของคุณ (Admin: kasoonlogun@gmail.com)
           </p>
+          <p id="gmail-modal-offline-note" class="hidden mt-2 text-[10px] font-semibold text-amber-800 bg-amber-50 border border-amber-200 rounded-lg px-2.5 py-1.5">
+            โหมด Offline / เปิดจากไฟล์ในเครื่อง: ยืนยันอีเมล Google สำรองเพื่อเข้าใช้งานได้ทันที
+          </p>
+        </div>
+        <div id="recent-gmail-accounts-box" class="hidden space-y-1.5 text-left">
+          <p class="text-[10px] font-bold text-slate-500">บัญชีที่เคยใช้งานล่าสุด</p>
+          <div id="recent-gmail-accounts-list" class="space-y-1.5 max-h-28 overflow-y-auto"></div>
         </div>
         <form id="form-google-email-login" class="space-y-2.5 text-left">
           <div>
@@ -2772,9 +2830,6 @@
             ดำเนินการต่อด้วย Google
           </button>
         </form>
-        <div class="bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-left text-[10px] text-slate-600 leading-relaxed">
-          เมื่อนำขึ้นโดเมนจริง สามารถใส่ <code class="font-mono text-slate-800">GOOGLE_CLIENT_ID</code> ในโค้ดเพื่อเปิดใช้ Google OAuth2 / One Tap อัตโนมัติได้ทันที
-        </div>
         <button id="btn-close-gmail-modal" type="button" class="w-full py-2 bg-slate-100 text-slate-600 text-xs font-bold rounded-xl hover:bg-slate-200 transition">
           ยกเลิก
         </button>
@@ -21507,7 +21562,7 @@ const SQL_BOREHOLES_META = {"37066224::DCDP4.": {"site": "Damcrest", "location":
 
     // User Roles and Access Control State
     const ADMIN_EMAIL = 'kasoonlogun@gmail.com';
-    const GOOGLE_CLIENT_ID = '479939442138-3qkdop0rhnv8lplhn5tos342a6tagaop.apps.googleusercontent.com';
+    const GOOGLE_CLIENT_ID = ''; // ใส่ Google OAuth 2.0 Client ID จาก Google Cloud Console เมื่อขึ้นโดเมนจริง
     let currentUserRole = 'user'; // 'super_admin' | 'admin' | 'user'
     let currentUserId = '';
     let currentUserName = '';
@@ -21756,35 +21811,262 @@ const SQL_BOREHOLES_META = {"37066224::DCDP4.": {"site": "Damcrest", "location":
       }
     }
 
-    document.getElementById('form-login').addEventListener('submit', (e) => {
-      e.preventDefault();
-      loginAlert.classList.add('hidden');
-      const user = inputUsername.value.trim().toLowerCase();
+    const RECENT_GMAIL_KEY = 'geofield_recent_gmail_v1';
+    const REMEMBER_USER_KEY = 'geofield_remember_user_v1';
+    const USERS_STORAGE_KEY = 'geofield_users_db_v1';
 
-      const rawInputUser = inputUsername.value.trim();
-      if (user === ADMIN_EMAIL) {
-        currentUserId = ADMIN_EMAIL;
-        updateRoleState('super_admin');
-        currentUserName = `${ADMIN_EMAIL} (Admin)`;
-        if (selectActiveRole) selectActiveRole.value = 'super_admin';
-        const badgeUser = document.getElementById('menu-active-user-badge');
-        if (badgeUser) badgeUser.innerText = ADMIN_EMAIL;
-        showToast(`เข้าสู่ระบบสำเร็จในฐานะ Admin (${ADMIN_EMAIL})`, '👑');
-        navigateTo('main-menu');
+    function hashPasswordOffline(password) {
+      const str = String(password || '');
+      let h1 = 0x811c9dc5;
+      let h2 = 0x9e3779b9;
+      for (let i = 0; i < str.length; i++) {
+        const ch = str.charCodeAt(i);
+        h1 ^= ch;
+        h1 = Math.imul(h1, 0x01000193);
+        h2 = Math.imul(h2 ^ ch, 0x85ebca6b);
+      }
+      return 'gf_' + (h1 >>> 0).toString(16).padStart(8, '0') + (h2 >>> 0).toString(16).padStart(8, '0');
+    }
+
+    function getUsersDB() {
+      try {
+        const raw = localStorage.getItem(USERS_STORAGE_KEY);
+        const parsed = raw ? JSON.parse(raw) : {};
+        return (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) ? parsed : {};
+      } catch (e) {
+        return {};
+      }
+    }
+
+    function saveUsersDB(db) {
+      try {
+        localStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(db || {}));
+      } catch (e) {}
+    }
+
+    function findUserByEmail(email) {
+      const key = String(email || '').trim().toLowerCase();
+      if (!key) return null;
+      const db = getUsersDB();
+      return db[key] || null;
+    }
+
+    function upsertUserRecord(record) {
+      if (!record || !record.email) return null;
+      const key = String(record.email).trim().toLowerCase();
+      const db = getUsersDB();
+      db[key] = Object.assign({}, db[key] || {}, record, { email: key });
+      saveUsersDB(db);
+      return db[key];
+    }
+
+    function getRecentGmailAccounts() {
+      try {
+        const raw = localStorage.getItem(RECENT_GMAIL_KEY);
+        const parsed = raw ? JSON.parse(raw) : [];
+        return Array.isArray(parsed) ? parsed : [];
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function saveRecentGmailAccount(email) {
+      try {
+        const list = getRecentGmailAccounts().filter(e => e !== email);
+        list.unshift(email);
+        localStorage.setItem(RECENT_GMAIL_KEY, JSON.stringify(list.slice(0, 5)));
+      } catch (e) {}
+    }
+
+    function renderRecentGmailAccounts() {
+      const box = document.getElementById('recent-gmail-accounts-box');
+      const listEl = document.getElementById('recent-gmail-accounts-list');
+      if (!box || !listEl) return;
+      const accounts = getRecentGmailAccounts();
+      if (accounts.length === 0) {
+        box.classList.add('hidden');
+        listEl.innerHTML = '';
+        return;
+      }
+      box.classList.remove('hidden');
+      listEl.innerHTML = accounts.map(acc => `
+        <button type="button" data-gmail-pick="${acc}" class="w-full flex items-center justify-between px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 hover:bg-blue-50 hover:border-blue-300 text-left transition">
+          <span class="text-xs font-bold text-slate-700 truncate">${acc}</span>
+          <span class="text-[10px] font-bold ${acc === ADMIN_EMAIL ? 'text-amber-700 bg-amber-100' : 'text-blue-700 bg-blue-100'} px-2 py-0.5 rounded-full shrink-0 ml-2">${acc === ADMIN_EMAIL ? 'Admin' : 'เลือก'}</span>
+        </button>
+      `).join('');
+      listEl.querySelectorAll('[data-gmail-pick]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const picked = btn.getAttribute('data-gmail-pick');
+          loginWithGoogleAccount(picked, picked.split('@')[0]);
+        });
+      });
+    }
+
+    try {
+      const remembered = localStorage.getItem(REMEMBER_USER_KEY);
+      if (remembered && inputUsername) inputUsername.value = remembered;
+    } catch (e) {}
+
+    const formLoginEl = document.getElementById('form-login');
+    const formRegisterEl = document.getElementById('form-register');
+    const tabAuthLogin = document.getElementById('tab-auth-login');
+    const tabAuthRegister = document.getElementById('tab-auth-register');
+
+    function switchAuthTab(mode) {
+      if (loginAlert) loginAlert.classList.add('hidden');
+      if (mode === 'register') {
+        if (formLoginEl) formLoginEl.classList.add('hidden');
+        if (formRegisterEl) formRegisterEl.classList.remove('hidden');
+        if (tabAuthRegister) tabAuthRegister.className = 'py-2 text-xs font-bold rounded-lg bg-white text-[#1F497D] shadow-sm transition';
+        if (tabAuthLogin) tabAuthLogin.className = 'py-2 text-xs font-bold rounded-lg text-slate-600 hover:text-slate-800 transition';
+        const regEmailEl = document.getElementById('reg-email');
+        if (regEmailEl && inputUsername && inputUsername.value.trim() && !regEmailEl.value.trim()) {
+          regEmailEl.value = inputUsername.value.trim();
+        }
       } else {
-        currentUserId = user;
+        if (formRegisterEl) formRegisterEl.classList.add('hidden');
+        if (formLoginEl) formLoginEl.classList.remove('hidden');
+        if (tabAuthLogin) tabAuthLogin.className = 'py-2 text-xs font-bold rounded-lg bg-white text-[#1F497D] shadow-sm transition';
+        if (tabAuthRegister) tabAuthRegister.className = 'py-2 text-xs font-bold rounded-lg text-slate-600 hover:text-slate-800 transition';
+      }
+    }
+
+    tabAuthLogin?.addEventListener('click', () => switchAuthTab('login'));
+    tabAuthRegister?.addEventListener('click', () => switchAuthTab('register'));
+    document.getElementById('btn-switch-to-register')?.addEventListener('click', () => switchAuthTab('register'));
+    document.getElementById('btn-switch-to-login')?.addEventListener('click', () => switchAuthTab('login'));
+
+    function completeAuthenticatedSession(email, displayName, isAdmin) {
+      const normalizedEmail = String(email || '').trim().toLowerCase();
+      currentUserId = normalizedEmail;
+      if (isAdmin) {
+        updateRoleState('super_admin');
+        if (selectActiveRole) selectActiveRole.value = 'super_admin';
+        currentUserName = displayName ? `${displayName} (${normalizedEmail})` : `${normalizedEmail} (Admin)`;
+      } else {
         updateRoleState('user');
-        currentUserName = rawInputUser;
         if (selectActiveRole) selectActiveRole.value = 'user';
-        const badgeUser = document.getElementById('menu-active-user-badge');
-        if (badgeUser) badgeUser.innerText = rawInputUser;
-        showToast(`ยินดีต้อนรับ ${rawInputUser} (เข้าถึงเฉพาะโครงการที่ท่านบันทึก)`, '👤');
-        navigateTo('main-menu');
+        currentUserName = displayName ? `${displayName} (${normalizedEmail})` : normalizedEmail;
+      }
+      const badgeUser = document.getElementById('menu-active-user-badge');
+      if (badgeUser) {
+        badgeUser.innerText = normalizedEmail;
+        badgeUser.classList.remove('hidden');
       }
       if (currentActivePrjId && !canAccessProject(currentActivePrjId)) {
         currentActivePrjId = '';
       }
       updateMainMenuUI();
+      navigateTo('main-menu');
+    }
+
+    formLoginEl.addEventListener('submit', (e) => {
+      e.preventDefault();
+      loginAlert.classList.add('hidden');
+      const rawInputUser = inputUsername.value.trim();
+      const userEmail = rawInputUser.toLowerCase();
+      const password = inputPassword ? inputPassword.value : '';
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userEmail)) {
+        showLoginAlert('กรุณาระบุรูปแบบอีเมลให้ถูกต้อง (เช่น name@gmail.com)', 'error');
+        return;
+      }
+      if (!password) {
+        showLoginAlert('กรุณาระบุรหัสผ่านเพื่อเข้าสู่ระบบ', 'error');
+        return;
+      }
+
+      const userRecord = findUserByEmail(userEmail);
+      if (!userRecord) {
+        showLoginAlert('ไม่พบบัญชีอีเมลนี้ในเครื่อง กรุณากดแท็บ "สมัครสมาชิก" เพื่อสร้างบัญชีก่อนเข้าใช้งาน', 'error');
+        return;
+      }
+      if (userRecord.authProvider === 'google' && !userRecord.passwordHash) {
+        showLoginAlert('บัญชีนี้ลงทะเบียนผ่าน Google กรุณาเข้าสู่ระบบด้วยปุ่ม Sign in with Google ด้านล่าง หรือสมัครสมาชิกเพื่อตั้งรหัสผ่าน', 'info');
+        return;
+      }
+      if (userRecord.passwordHash !== hashPasswordOffline(password)) {
+        showLoginAlert('รหัสผ่านไม่ถูกต้อง กรุณาตรวจสอบและลองใหม่อีกครั้ง', 'error');
+        return;
+      }
+
+      const chkRemember = document.getElementById('chk-remember');
+      try {
+        if (chkRemember && chkRemember.checked) {
+          localStorage.setItem(REMEMBER_USER_KEY, userEmail);
+        } else {
+          localStorage.removeItem(REMEMBER_USER_KEY);
+        }
+      } catch (err) {}
+
+      saveRecentGmailAccount(userEmail);
+      const isAdmin = userEmail === ADMIN_EMAIL || userRecord.role === 'super_admin';
+      completeAuthenticatedSession(userEmail, userRecord.name || userEmail.split('@')[0], isAdmin);
+      showToast(
+        isAdmin
+          ? `เข้าสู่ระบบสำเร็จในฐานะ Admin (${userEmail})`
+          : `ยินดีต้อนรับ ${userRecord.name || userEmail} (เข้าถึงเฉพาะโครงการที่ท่านบันทึก)`,
+        isAdmin ? '👑' : '👤'
+      );
+    });
+
+    formRegisterEl?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      loginAlert.classList.add('hidden');
+      const fullName = (document.getElementById('reg-fullname')?.value || '').trim();
+      const rawEmail = (document.getElementById('reg-email')?.value || '').trim();
+      const normalizedEmail = rawEmail.toLowerCase();
+      const password = document.getElementById('reg-password')?.value || '';
+      const passwordConfirm = document.getElementById('reg-password-confirm')?.value || '';
+
+      if (!fullName) {
+        showLoginAlert('กรุณาระบุชื่อ-นามสกุล หรือชื่อผู้ใช้งาน', 'error');
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) {
+        showLoginAlert('กรุณาระบุรูปแบบอีเมลให้ถูกต้อง (เช่น name@gmail.com)', 'error');
+        return;
+      }
+      if (password.length < 4) {
+        showLoginAlert('รหัสผ่านต้องมีความยาวอย่างน้อย 4 ตัวอักษร', 'error');
+        return;
+      }
+      if (password !== passwordConfirm) {
+        showLoginAlert('รหัสผ่านและการยืนยันรหัสผ่านไม่ตรงกัน', 'error');
+        return;
+      }
+
+      const existing = findUserByEmail(normalizedEmail);
+      if (existing && existing.passwordHash) {
+        showLoginAlert('อีเมลนี้ถูกสมัครสมาชิกไว้แล้ว กรุณาสลับไปหน้า "เข้าสู่ระบบ"', 'error');
+        return;
+      }
+
+      const isAdmin = normalizedEmail === ADMIN_EMAIL;
+      upsertUserRecord({
+        email: normalizedEmail,
+        name: fullName,
+        passwordHash: hashPasswordOffline(password),
+        role: isAdmin ? 'super_admin' : 'user',
+        authProvider: 'local',
+        createdAt: existing?.createdAt || new Date().toISOString()
+      });
+
+      saveRecentGmailAccount(normalizedEmail);
+      try {
+        const chkRemember = document.getElementById('chk-remember');
+        if (chkRemember && chkRemember.checked) {
+          localStorage.setItem(REMEMBER_USER_KEY, normalizedEmail);
+        }
+      } catch (err) {}
+
+      if (inputUsername) inputUsername.value = normalizedEmail;
+      if (inputPassword) inputPassword.value = '';
+      formRegisterEl.reset();
+      switchAuthTab('login');
+      completeAuthenticatedSession(normalizedEmail, fullName, isAdmin);
+      showToast(`สมัครสมาชิกและเข้าสู่ระบบสำเร็จ: ${fullName}`, '✅');
     });
 
     document.getElementById('btn-toggle-password').addEventListener('click', () => {
@@ -21797,8 +22079,21 @@ const SQL_BOREHOLES_META = {"37066224::DCDP4.": {"site": "Damcrest", "location":
       }
     });
 
+    document.getElementById('btn-toggle-reg-password')?.addEventListener('click', () => {
+      const regPw = document.getElementById('reg-password');
+      const btn = document.getElementById('btn-toggle-reg-password');
+      if (!regPw || !btn) return;
+      if (regPw.type === 'password') {
+        regPw.type = 'text';
+        btn.innerText = '🔒';
+      } else {
+        regPw.type = 'password';
+        btn.innerText = '👁️';
+      }
+    });
+
     document.getElementById('btn-forgot-hint').addEventListener('click', () => {
-      showLoginAlert('กำหนดชื่อผู้ใช้: admin (Admin หลัก) หรือ user (ผู้ใช้งานทั่วไป)', 'info');
+      showLoginAlert('ข้อมูลบัญชีเก็บแบบ Offline ในเครื่อง (localStorage) หากลืมรหัสผ่านสามารถกดปุ่ม Sign in with Google (Gmail) เพื่อยืนยันอีเมลสำรองได้ทันที', 'info');
     });
 
     function performLogout() {
@@ -21824,32 +22119,45 @@ const SQL_BOREHOLES_META = {"37066224::DCDP4.": {"site": "Damcrest", "location":
       }
     }
 
+    function isLocalOrOfflineAuth() {
+      return window.location.protocol === 'file:' || !navigator.onLine || !GOOGLE_CLIENT_ID;
+    }
+
     function loginWithGoogleAccount(email, displayName) {
       const normalizedEmail = (email || '').trim().toLowerCase();
-      if (!normalizedEmail || !normalizedEmail.includes('@')) {
-        showToast('กรุณาระบุอีเมล Google ที่ถูกต้อง', '⚠️');
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) {
+        showToast('กรุณาระบุอีเมล Google ที่ถูกต้อง (เช่น name@gmail.com)', '⚠️');
         return;
       }
-      currentUserId = normalizedEmail;
-      if (normalizedEmail === ADMIN_EMAIL) {
-        updateRoleState('super_admin');
-        if (selectActiveRole) selectActiveRole.value = 'super_admin';
-        currentUserName = displayName ? `${displayName} (${normalizedEmail})` : `${normalizedEmail} (Admin)`;
-        showToast(`เข้าสู่ระบบผ่าน Google สำเร็จ: ${normalizedEmail} (Admin)`, '👑');
-      } else {
-        updateRoleState('user');
-        if (selectActiveRole) selectActiveRole.value = 'user';
-        currentUserName = displayName ? `${displayName} (${normalizedEmail})` : normalizedEmail;
-        showToast(`เข้าสู่ระบบผ่าน Google สำเร็จ: ${normalizedEmail} (User ทั่วไป)`, '👤');
+      const existing = findUserByEmail(normalizedEmail);
+      const resolvedName = displayName || (existing && existing.name) || normalizedEmail.split('@')[0];
+      const isAdmin = normalizedEmail === ADMIN_EMAIL || (existing && existing.role === 'super_admin');
+      if (!existing) {
+        upsertUserRecord({
+          email: normalizedEmail,
+          name: resolvedName,
+          passwordHash: '',
+          role: isAdmin ? 'super_admin' : 'user',
+          authProvider: 'google',
+          createdAt: new Date().toISOString()
+        });
       }
-      const badgeUser = document.getElementById('menu-active-user-badge');
-      if (badgeUser) badgeUser.innerText = normalizedEmail;
-      if (currentActivePrjId && !canAccessProject(currentActivePrjId)) {
-        currentActivePrjId = '';
-      }
-      updateMainMenuUI();
+      saveRecentGmailAccount(normalizedEmail);
+      try {
+        const chkRemember = document.getElementById('chk-remember');
+        if (chkRemember && chkRemember.checked) {
+          localStorage.setItem(REMEMBER_USER_KEY, normalizedEmail);
+        }
+      } catch (e) {}
+      if (inputUsername) inputUsername.value = normalizedEmail;
       if (gmailModal) gmailModal.classList.add('hidden');
-      navigateTo('main-menu');
+      completeAuthenticatedSession(normalizedEmail, resolvedName, isAdmin);
+      showToast(
+        isAdmin
+          ? `เข้าสู่ระบบผ่าน Google สำเร็จ: ${normalizedEmail} (Admin)`
+          : `เข้าสู่ระบบผ่าน Google สำเร็จ: ${normalizedEmail} (User ทั่วไป)`,
+        isAdmin ? '👑' : '👤'
+      );
     }
 
     window.handleGoogleCredentialResponse = function(response) {
@@ -21861,8 +22169,24 @@ const SQL_BOREHOLES_META = {"37066224::DCDP4.": {"site": "Damcrest", "location":
       loginWithGoogleAccount(payload.email, payload.name || payload.email);
     };
 
+    function updateGoogleFallbackButtonUI() {
+      const badge = document.getElementById('btn-google-login-badge');
+      const fallbackBtn = document.getElementById('btn-google-login');
+      if (fallbackBtn) fallbackBtn.classList.remove('hidden');
+      if (badge) {
+        if (isLocalOrOfflineAuth() || !window.google || !google.accounts || !google.accounts.id) {
+          badge.innerText = 'ยืนยันอีเมลสำรอง';
+          badge.className = 'bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded-full group-hover:bg-amber-200 transition';
+        } else {
+          badge.innerText = 'พร้อมใช้งาน';
+          badge.className = 'bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded-full group-hover:bg-emerald-200 transition';
+        }
+      }
+    }
+
     function initGoogleSignIn() {
-      if (!GOOGLE_CLIENT_ID || !window.google || !google.accounts || !google.accounts.id) return;
+      updateGoogleFallbackButtonUI();
+      if (isLocalOrOfflineAuth() || !window.google || !google.accounts || !google.accounts.id) return;
       try {
         google.accounts.id.initialize({
           client_id: GOOGLE_CLIENT_ID,
@@ -21876,18 +22200,40 @@ const SQL_BOREHOLES_META = {"37066224::DCDP4.": {"site": "Damcrest", "location":
         }
       } catch (e) {
         console.warn('Google Sign-In init warning:', e);
+        updateGoogleFallbackButtonUI();
       }
     }
     window.addEventListener('load', initGoogleSignIn);
+    window.addEventListener('online', updateGoogleFallbackButtonUI);
+    window.addEventListener('offline', updateGoogleFallbackButtonUI);
+
+    function openGmailModal() {
+      renderRecentGmailAccounts();
+      const offlineNote = document.getElementById('gmail-modal-offline-note');
+      if (offlineNote) {
+        if (isLocalOrOfflineAuth() || !window.google || !google.accounts || !google.accounts.id) {
+          offlineNote.classList.remove('hidden');
+        } else {
+          offlineNote.classList.add('hidden');
+        }
+      }
+      if (gmailModal) gmailModal.classList.remove('hidden');
+      const gEmailInput = document.getElementById('input-google-email');
+      if (gEmailInput) gEmailInput.focus();
+    }
 
     document.getElementById('btn-google-login').addEventListener('click', () => {
-      if (GOOGLE_CLIENT_ID && window.google && google.accounts && google.accounts.id) {
-        google.accounts.id.prompt();
-      } else {
-        gmailModal.classList.remove('hidden');
-        const gEmailInput = document.getElementById('input-google-email');
-        if (gEmailInput) gEmailInput.focus();
+      if (!isLocalOrOfflineAuth() && window.google && google.accounts && google.accounts.id) {
+        try {
+          google.accounts.id.prompt((notification) => {
+            if (notification && (notification.isNotDisplayed() || notification.isSkippedMoment())) {
+              openGmailModal();
+            }
+          });
+          return;
+        } catch (e) {}
       }
+      openGmailModal();
     });
     document.getElementById('btn-close-gmail-modal').addEventListener('click', () => gmailModal.classList.add('hidden'));
     const formGoogleEmailLogin = document.getElementById('form-google-email-login');
@@ -26653,53 +26999,29 @@ const SQL_BOREHOLES_META = {"37066224::DCDP4.": {"site": "Damcrest", "location":
         svg.push(`<line x1="655" y1="${yBh.toFixed(1)}" x2="740" y2="${yBh.toFixed(1)}" stroke="#000" stroke-width="0.8" />`);
       }
 
-      // 10. Bottom Legend Box (แสดงเฉพาะหน้าสุดท้ายเท่านั้น พร้อมคำอธิบายภาษาไทย)
+      // 10. Bottom Legend Box (แสดงเฉพาะหน้าสุดท้ายเท่านั้น)
       if (showLegend) {
-        svg.push(`<rect x="20" y="900" width="720" height="22" fill="none" stroke="#000" stroke-width="1.0" />`);
-        svg.push(`<rect x="20" y="922" width="720" height="114" fill="none" stroke="#000" stroke-width="1.0" />`);
-        [182, 344, 534].forEach(lx => {
+        svg.push(`<rect x="20" y="900" width="720" height="20" fill="none" stroke="#000" stroke-width="1.0" />`);
+        svg.push(`<rect x="20" y="920" width="720" height="116" fill="none" stroke="#000" stroke-width="1.0" />`);
+        [195, 355, 535].forEach(lx => {
           svg.push(`<line x1="${lx}" y1="900" x2="${lx}" y2="1036" stroke="#000" stroke-width="0.9" />`);
         });
-        svg.push(`<text x="101" y="915" text-anchor="middle" font-size="12" font-weight="bold" fill="#000">RQD (คุณภาพหิน)</text>`);
-        svg.push(`<text x="263" y="915" text-anchor="middle" font-size="12" font-weight="bold" fill="#000">Degree of Hardness (ความแข็ง)</text>`);
-        svg.push(`<text x="439" y="915" text-anchor="middle" font-size="12" font-weight="bold" fill="#000">Degree of Weathering (การผุพัง)</text>`);
-        svg.push(`<text x="637" y="915" text-anchor="middle" font-size="12" font-weight="bold" fill="#000">Degree of Permeability (การรั่วซึม)</text>`);
+        svg.push(`<text x="107.5" y="914" text-anchor="middle" font-size="14" font-weight="bold" fill="#000">RQD</text>`);
+        svg.push(`<text x="275" y="914" text-anchor="middle" font-size="14" font-weight="bold" fill="#000">Degree of Hardness</text>`);
+        svg.push(`<text x="445" y="914" text-anchor="middle" font-size="14" font-weight="bold" fill="#000">Degree of Weathering</text>`);
+        svg.push(`<text x="637.5" y="914" text-anchor="middle" font-size="14" font-weight="bold" fill="#000">Degree of Permeability</text>`);
 
-        const rqdLeg = [
-          '&lt;25%   = Very Poor (เลวมาก)',
-          '25-50% = Poor (เลว)',
-          '50-75% = Fair (พอใช้)',
-          '75-90% = Good (ดี)',
-          '90-100%= Very Good (ดีมาก)'
-        ];
-        const hardLeg = [
-          '1 = Very Soft (อ่อนมาก)',
-          '2 = Soft (อ่อน)',
-          '3 = Medium Hard (แข็งปานกลาง)',
-          '4 = Hard (แข็ง)',
-          '5 = Very Hard (แข็งมาก)'
-        ];
-        const weathLeg = [
-          '1 = Completely Weathered (ผุพังสมบูรณ์)',
-          '2 = Highly Weathered (ผุพังมาก)',
-          '3 = Moderately Weathered (ผุพังปานกลาง)',
-          '4 = Slightly Weathered (ผุพังเล็กน้อย)',
-          '5 = Fresh Rock (หินสด ไม่ผุพัง)'
-        ];
-        const permLeg = [
-          '1 = &lt;1 Lu หรือ &lt;10⁻⁵ cm/s (ทึบน้ำ)',
-          '2 = 1-5 Lu หรือ 1-5×10⁻⁵ (รั่วซึมต่ำ)',
-          '3 = 5-10 Lu หรือ 5×10⁻⁵-10⁻⁴ (ปานกลาง)',
-          '4 = 10-50 Lu หรือ 1-5×10⁻⁴ (รั่วซึมสูง)',
-          '5 = &gt;50 Lu หรือ &gt;5×10⁻⁴ (สูงมาก)'
-        ];
+        const rqdLeg = ['&lt;25 %   =Very Poor Rock', '25-50 % =Poor Rock', '50-75 % =Fair Rock', '75-90 % =Good Rock', '90-100% =Very Good Rock'];
+        const hardLeg = ['1 = Very Soft Rock', '2 = Soft Rock', '3 = Medium Hard Rock', '4 = Hard Rock', '5 = Very Hard Rock'];
+        const weathLeg = ['1 = Completely Weathered Rock', '2 = Highly Weathered Rock', '3 = Moderately Weathered Rock', '4 = Slightly Weathered Rock', '5 = Fresh Rock'];
+        const permLeg = ['1 = &lt;1    Lugeon or &lt;1.0x10⁻⁵cm/sec', '2 = 1-5   Lugeon or 1.0x10⁻⁵-5.0x10⁻⁵cm/sec', '3 = 5-10  Lugeon or 5.0x10⁻⁵-1.0x10⁻⁴cm/sec', '4 = 10-50 Lugeon or 1.0x10⁻⁴-5.0x10⁻⁴cm/sec', '5 = &gt;50   Lugeon or &gt;5.0x10⁻⁴cm/sec'];
 
         for (let i = 0; i < 5; i++) {
-          const ly = 940 + i * 19;
-          svg.push(`<text x="26" y="${ly}" font-size="11.5" fill="#000">${rqdLeg[i]}</text>`);
-          svg.push(`<text x="188" y="${ly}" font-size="11.5" fill="#000">${hardLeg[i]}</text>`);
-          svg.push(`<text x="350" y="${ly}" font-size="11" fill="#000">${weathLeg[i]}</text>`);
-          svg.push(`<text x="540" y="${ly}" font-size="11" fill="#000">${permLeg[i]}</text>`);
+          const ly = 938 + i * 19;
+          svg.push(`<text x="30" y="${ly}" font-size="14" fill="#000">${rqdLeg[i]}</text>`);
+          svg.push(`<text x="204" y="${ly}" font-size="14" fill="#000">${hardLeg[i]}</text>`);
+          svg.push(`<text x="362" y="${ly}" font-size="14" fill="#000">${weathLeg[i]}</text>`);
+          svg.push(`<text x="540" y="${ly}" font-size="14" fill="#000">${permLeg[i]}</text>`);
         }
       }
 
